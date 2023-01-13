@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <>
       <button onClick={() => navigate("/drake")}>Drake</button>
-      <button onClick={() => navigate("/mahzinho")}>Mahzinho</button>
+      {/* <button onClick={() => navigate("/mahzinho")}>Mahzinho</button> */}
     </>
   );
 }
