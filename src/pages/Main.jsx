@@ -2,15 +2,24 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import drakeImg from "./../assets/drake_01.jpeg";
+import obrigadoAudio from "./../assets/obrigado.mp3";
 
 export default function Main() {
   const navigate = useNavigate();
+  const audio = new Audio(obrigadoAudio);
   return (
     <Page>
       <h2>Descubra aqui o que o seu Mestre quer esconder de você!</h2>
       <Menu>
         <Image img={drakeImg}>
-          <div onClick={() => navigate("/drake")}>CLIQUE AQUI!</div>
+          <div
+            onClick={() => {
+              audio.play();
+              navigate("/drake");
+            }}
+          >
+            CLIQUE AQUI!
+          </div>
         </Image>
         {/* <Image img={drakeImg}>
           <div onClick={() => navigate("/mahzinho")}>Mahzinho</div>
