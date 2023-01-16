@@ -1,15 +1,23 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: slategray;
+  background: #197503;
+  background: -moz-linear-gradient(left, #197503 0%, #43cb00 50%, #197503 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #197503 0%,
+    #43cb00 50%,
+    #197503 100%
+  );
+  background: linear-gradient(to right, #197503 0%, #43cb00 50%, #197503 100%);
 
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: black;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
