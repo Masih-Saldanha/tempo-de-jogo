@@ -26,7 +26,7 @@ export default function Game(props) {
   return (
     <Square img={image}>
       <h1>{parsonName} já está a:</h1>
-      <h2>{years} anos</h2>
+      {years !== 1 ? <h2>{years} anos</h2> : <h2>{years} ano</h2>}
       <h2>{months} meses</h2>
       <h2>{days} dias</h2>
       <h2>{hours} horas</h2>
