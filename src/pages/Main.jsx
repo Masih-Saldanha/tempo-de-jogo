@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,6 +8,7 @@ import obrigadoAudio from "./../assets/obrigado.mp3";
 export default function Main() {
   const navigate = useNavigate();
   const audio = new Audio(obrigadoAudio);
+  const [loading, setLoading] = useState(false);
   return (
     <Page>
       <h2>Descubra aqui o que o seu Mestre quer esconder de você!</h2>
@@ -14,8 +16,17 @@ export default function Main() {
         <Image img={drakeImg}>
           <div
             onClick={() => {
-              audio.play();
-              navigate("/drake");
+              if (loading) {
+                return;
+              } else {
+                setLoading(true);
+                audio.play();
+                setTimeout(() => {
+                  setLoading(false);
+                  navigate("/drake");
+                }, 7000);
+                
+              }
             }}
           >
             CLIQUE AQUI!
