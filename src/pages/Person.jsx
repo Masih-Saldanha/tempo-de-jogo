@@ -8,11 +8,7 @@ export default function Person(props) {
   const navigate = useNavigate();
   return (
     <Main img={image}>
-      <div>
-        {/* <h1>{name}</h1> */}
-        <button onClick={() => navigate("/")}>Voltar</button>
-        <button onClick={() => navigate("/")}>Cobrar o {name}</button>
-      </div>
+      <button onClick={() => navigate("/")}>Voltar</button>
       <GameList parsonName={name}></GameList>
     </Main>
   );

@@ -33,6 +33,12 @@ export default function Game(props) {
       <h2>{minutes} minutos</h2>
       <h2>{seconds} segundos</h2>
       <h3>Sem zerar {name}</h3>
+      <a
+        href={`https://twitter.com/intent/tweet?text=@drakesincero26 vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. LAVE ESSA CARA E VÁ ZERAR!`}
+        target="_blank"
+      >
+        Cobre o {parsonName}
+      </a>
     </Square>
   );
 }
@@ -46,7 +52,37 @@ const Square = styled.div`
   font-size: 20px;
   background-color: rgb(35, 35, 35, 0.3);
   color: yellow;
-  text-shadow: 3px 3px 3px #1C6EA4;
+  text-shadow: 3px 3px 3px #1c6ea4;
+  a {
+    margin: 10px;
+
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 16px;
+    padding: 6px;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(
+      to right,
+      rgb(28, 110, 164) 0%,
+      rgb(35, 136, 203) 50%,
+      rgb(20, 78, 117) 100%
+    );
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+  }
+  a:hover {
+    background: #1c6ea4;
+  }
+  a:active {
+    background: #144e75;
+  }
   h1 {
     padding-bottom: 10px;
   }
