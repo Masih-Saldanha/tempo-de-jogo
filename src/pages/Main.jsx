@@ -25,7 +25,6 @@ export default function Main() {
                   setLoading(false);
                   navigate("/drake");
                 }, 7000);
-                
               }
             }}
           >

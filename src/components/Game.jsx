@@ -34,7 +34,7 @@ export default function Game(props) {
       <h2>{seconds} segundos</h2>
       <h3>Sem zerar {name}</h3>
       <a
-        href={`https://twitter.com/intent/tweet?text=@drakesincero26 vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. LAVE ESSA CARA E VÁ ZERAR!`}
+        href={`https://twitter.com/intent/tweet?text=@drakesincero5 vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. LAVE ESSA CARA E VÁ ZERAR!`}
         target="_blank"
       >
         Cobre o {parsonName}
