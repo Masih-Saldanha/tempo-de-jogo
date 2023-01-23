@@ -13,12 +13,12 @@ export default function App() {
         <Route
           exact
           path="/drake"
-          element={<Person name={"Drake"} twitter={"@drakesincero5"}/>}
+          element={<Person name={"Drake"} twitter={"@drakesincero5"} hashtag={"%23LaveACaraDrake"}/>}
         ></Route>
         <Route
           exact
           path="/mahzinho"
-          element={<Person name={"Mahzinho"} twitter={"@mahzinho"}/>}
+          element={<Person name={"Mahzinho"} twitter={"@mahzinho"} hashtag={"%23LaveACaraSemRegras"}/>}
         ></Route>
       </Routes>
     </BrowserRouter>
