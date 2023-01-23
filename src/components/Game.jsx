@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function Game(props) {
-  const { name, image, time, parsonName } = props;
+  const { name, image, time, parsonName, twitter } = props;
 
   const [userTime, setUserTime] = useState(dayjs(Date()));
 
@@ -34,7 +34,7 @@ export default function Game(props) {
       <h2>{seconds} segundos</h2>
       <h3>Sem zerar {name}</h3>
       <a
-        href={`https://twitter.com/intent/tweet?text=@drakesincero5 vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. LAVE ESSA CARA E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX através do https://segredo-sonysta.vercel.app/`}
+        href={`https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. LAVE ESSA CARA E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX e @kakabelinhoo através do https://segredo-sonysta.vercel.app/`}
         target="_blank"
       >
         Cobre o {parsonName}

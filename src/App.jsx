@@ -13,12 +13,12 @@ export default function App() {
         <Route
           exact
           path="/drake"
-          element={<Person name={"Drake"} image={"Drake Imagem"} />}
+          element={<Person name={"Drake"} twitter={"@drakesincero5"}/>}
         ></Route>
         <Route
           exact
           path="/mahzinho"
-          element={<Person name={"Mahzinho"} image={"Mahzinho Imagem"} />}
+          element={<Person name={"Mahzinho"} twitter={"@mahzinho"}/>}
         ></Route>
       </Routes>
     </BrowserRouter>

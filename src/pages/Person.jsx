@@ -4,12 +4,12 @@ import styled from "styled-components";
 import GameList from "../components/GameList";
 
 export default function Person(props) {
-  const { name, image } = props;
+  const { name, twitter } = props;
   const navigate = useNavigate();
   return (
-    <Main img={image}>
+    <Main>
       <button onClick={() => navigate("/")}>Voltar</button>
-      <GameList parsonName={name}></GameList>
+      <GameList parsonName={name} twitter={twitter}></GameList>
     </Main>
   );
 }

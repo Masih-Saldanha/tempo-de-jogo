@@ -12,6 +12,7 @@ body {
     #197503 100%
   );
   background: linear-gradient(to right, #197503 0%, #43cb00 50%, #197503 100%);
+  /* background: #197503 url("https://adrenaline.com.br/uploads/chamadas/playstation-5-vertical-problema.jpg") no-repeat scroll 50% 50%; */
 
   font-family: "Roboto", sans-serif;
   font-size: 16px;
