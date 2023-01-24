@@ -69,6 +69,7 @@ const Page = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 50px;
   h2 {
     margin: 20px;
     font-size: 20px;
