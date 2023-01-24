@@ -66,6 +66,7 @@ const LivePix = styled.aside`
   position: fixed;
   top: 0px;
   left: 0px;
+  text-align: center;
   button {
     margin: 10px;
 
