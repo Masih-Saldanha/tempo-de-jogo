@@ -46,13 +46,11 @@ export default function Game(props) {
 const Square = styled.div`
   border: 1px solid black;
   width: 250px;
-  margin: 5px;
+  margin: 20px;
   padding: 5px;
   text-align: center;
   font-size: 20px;
-  background-color: rgb(35, 35, 35, 0.3);
-  color: yellow;
-  text-shadow: 3px 3px 3px #1c6ea4;
+  background-color: rgb(35, 35, 35, 0.5);
   a {
     margin: 10px;
 
@@ -85,13 +83,16 @@ const Square = styled.div`
   }
   h1 {
     padding-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 5px black, -2px 2px 5px black, 2px -2px 5px black, -2px -2px 5px black;
   }
   h2 {
+    padding-top: 3px;
     color: rgb(255, 255, 255);
-    text-shadow: rgb(6, 70, 0) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px,
-      rgb(255, 255, 255) 0px 0px 15px, rgb(73, 255, 24) 0px 0px 20px,
-      rgb(73, 255, 24) 0px 0px 30px, rgb(73, 255, 24) 0px 0px 40px,
-      rgb(73, 255, 24) 0px 0px 55px, rgb(73, 255, 24) 0px 0px 75px;
+    text-shadow: rgb(0, 0, 70) 0px 0px 5px, rgb(0, 0, 0) 0px 0px 10px,
+      rgb(0, 0, 0) 0px 0px 15px, rgb(28, 24, 255) 0px 0px 20px,
+      rgb(28, 24, 255) 0px 0px 30px, rgb(28, 24, 255) 0px 0px 40px,
+      rgb(28, 24, 255) 0px 0px 55px, rgb(28, 24, 255) 0px 0px 75px;
     --darkreader-inline-color: #fffff7;
     --darkreader-inline-bgcolor: #030404;
   }
@@ -99,7 +100,7 @@ const Square = styled.div`
     padding-top: 20px;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    text-shadow: rgb(255, 64, 0) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px,
+    text-shadow: rgb(0, 0, 0) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px,
       rgb(255, 128, 0) 0px -10px 20px, red 0px -18px 40px;
     --darkreader-inline-color: #fffff7;
     --darkreader-inline-bgcolor: #161614;
