@@ -9,7 +9,7 @@ export default function Person(props) {
   return (
     <Main>
       <button onClick={() => navigate("/")}>Voltar</button>
-      <GameList parsonName={name} twitter={twitter} hashtag={hashtag}></GameList>
+      <GameList personName={name} twitter={twitter} hashtag={hashtag}></GameList>
     </Main>
   );
 }

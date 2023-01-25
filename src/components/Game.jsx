@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function Game(props) {
-  const { name, image, time, parsonName, twitter, hashtag } = props;
+  const { name, image, time, personName, twitter, hashtag } = props;
 
   const [userTime, setUserTime] = useState(dayjs(Date()));
 
   const now = dayjs(Date());
-  const gameLaunch = dayjs(time);
+  const gameLaunch = time;
   const years = now.diff(gameLaunch, "year");
   const months = now.diff(gameLaunch, "month");
   const days = now.diff(gameLaunch, "day");
@@ -25,7 +25,7 @@ export default function Game(props) {
 
   return (
     <Square img={image}>
-      <h1>{parsonName} já está a:</h1>
+      <h1>{personName} já está a:</h1>
       {years !== 1 ? <h2>{years} anos</h2> : <h2>{years} ano</h2>}
       <h2>{months} meses</h2>
       <h2>{days} dias</h2>
@@ -37,7 +37,7 @@ export default function Game(props) {
         href={`https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. ${hashtag} E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX e @kakabelinhoo através do https://segredo-sonysta.vercel.app/`}
         target="_blank"
       >
-        Cobre o {parsonName}
+        Cobre o {personName}
       </a>
     </Square>
   );
