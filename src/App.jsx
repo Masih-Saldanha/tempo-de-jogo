@@ -7,7 +7,8 @@ import Person from "./pages/Person";
 import Error from "./pages/Error";
 import Main from "./pages/Main";
 import livePix from "./assets/livepix.png";
-import pidao from "./assets/pidao.mp3"
+import pidao from "./assets/pidao.mp3";
+import BG from "./components/BG";
 
 export default function App() {
   const [buttonPix, setButtonPix] = useState(false);
@@ -212,12 +213,19 @@ export default function App() {
   const pidaoSound = new Audio(pidao);
   return (
     <BrowserRouter>
+      <BGButton>
+        <BG />
+      </BGButton>
       <LivePix>
         {!buttonPix ? (
-          <button onClick={() => {
-            pidaoSound.play();
-            setButtonPix(true);
-          }}>Contribua</button>
+          <button
+            onClick={() => {
+              pidaoSound.play();
+              setButtonPix(true);
+            }}
+          >
+            Contribua
+          </button>
         ) : (
           <menu>
             <h1>Ajude este site a se manter e zoar com mais sonystas</h1>
@@ -268,6 +276,15 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+const BGButton = styled.div`
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  z-index: 1;
+`;
+
 const LivePix = styled.aside`
   position: fixed;
   top: 0px;

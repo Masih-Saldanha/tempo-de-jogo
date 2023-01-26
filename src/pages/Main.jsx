@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -6,18 +6,12 @@ import drakeImg from "./../assets/drake_01.jpeg";
 import mahzinhoImg from "./../assets/mahzinho_bloqueado.jpeg";
 import obrigadoAudio from "./../assets/obrigado.mp3";
 import mahzinhoAudio from "./../assets/audio_mazinho.mp3";
-import bg from "./../assets/bg.mp3";
 
 export default function Main() {
   const navigate = useNavigate();
-  const bgMusic = new Audio(bg);
   const audioDrake = new Audio(obrigadoAudio);
   const audioMahzinho = new Audio(mahzinhoAudio);
   const [loading, setLoading] = useState(false);
-  // useEffect(() => {
-  //   bgMusic.play();
-  //   console.log("teste");
-  // }, []);
   return (
     <Page>
       <h2>Descubra aqui o que o seu Mestre quer esconder de você!</h2>
