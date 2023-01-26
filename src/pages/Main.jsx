@@ -11,7 +11,7 @@ import bg from "./../assets/bg.mp3";
 export default function Main() {
   const navigate = useNavigate();
   const bgMusic = new Audio(bg);
-  const audioPrata = new Audio(obrigadoAudio);
+  const audioDrake = new Audio(obrigadoAudio);
   const audioMahzinho = new Audio(mahzinhoAudio);
   const [loading, setLoading] = useState(false);
   // useEffect(() => {
@@ -22,26 +22,26 @@ export default function Main() {
     <Page>
       <h2>Descubra aqui o que o seu Mestre quer esconder de você!</h2>
       <Menu>
-        <Image img={drakeImg}>
-          <div
+        <ImageDrake img={drakeImg}>
+          <h1
             onClick={() => {
               if (loading) {
                 return;
               } else {
                 setLoading(true);
-                audioPrata.play();
+                audioDrake.play();
                 setTimeout(() => {
                   setLoading(false);
                   navigate("/drake");
-                }, 7000);
+                }, 3000);
               }
             }}
           >
             CLIQUE AQUI!
-          </div>
-        </Image>
+          </h1>
+        </ImageDrake>
         <ImageMahzinho img={mahzinhoImg}>
-          <div
+          <h1
             onClick={() => {
               if (loading) {
                 return;
@@ -51,12 +51,12 @@ export default function Main() {
                 setTimeout(() => {
                   setLoading(false);
                   // navigate("/mahzinho");
-                }, 10000);
+                }, 3000);
               }
             }}
           >
             EM BREVE
-          </div>
+          </h1>
         </ImageMahzinho>
       </Menu>
     </Page>
@@ -85,78 +85,48 @@ const Page = styled.div`
 `;
 
 const Menu = styled.menu`
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  div {
+    margin: 20px;
+
+    border: 1px solid black;
+    border-radius: 10%;
+    width: 300px;
+    height: 300px;
+
+    -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 30px;
+      padding-top: 20px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      text-shadow: rgb(255, 64, 0) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px,
+        rgb(255, 128, 0) 0px -10px 20px, red 0px -18px 40px;
+      --darkreader-inline-color: #fffff7;
+      --darkreader-inline-bgcolor: #161614;
+    }
+    h1:hover {
+      text-shadow: rgb(255, 255, 0) 0px -1px 4px, rgb(255, 64, 0) 0px -2px 10px,
+        red 0px -10px 20px, rgb(255, 128, 0) 0px -18px 40px;
+      --darkreader-inline-color: #fffff7;
+      --darkreader-inline-bgcolor: #161614;
+    }
+  }
 `;
 
-const Image = styled.div`
-  margin: 20px;
-
-  border: 1px solid black;
-  border-radius: 10%;
-  width: 300px;
-  height: 300px;
+const ImageDrake = styled.div`
   background: url(${(props) => props.img}) no-repeat 50% 10%;
-
-  -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
-  box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  div {
-    font-size: 30px;
-    padding-top: 20px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-shadow: rgb(255, 64, 0) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px,
-      rgb(255, 128, 0) 0px -10px 20px, red 0px -18px 40px;
-    --darkreader-inline-color: #fffff7;
-    --darkreader-inline-bgcolor: #161614;
-  }
-  div:hover {
-    text-shadow: rgb(255, 255, 0) 0px -1px 4px, rgb(255, 64, 0) 0px -2px 10px,
-      red 0px -10px 20px, rgb(255, 128, 0) 0px -18px 40px;
-    --darkreader-inline-color: #fffff7;
-    --darkreader-inline-bgcolor: #161614;
-  }
 `;
 
 const ImageMahzinho = styled.div`
-  margin: 20px;
-
-  border: 1px solid black;
-  border-radius: 10%;
-  width: 300px;
-  height: 300px;
   background: url(${(props) => props.img}) no-repeat 20% 0%;
-
-  -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
-  box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  div {
-    font-size: 30px;
-    padding-top: 20px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-shadow: rgb(255, 64, 0) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px,
-      rgb(255, 128, 0) 0px -10px 20px, red 0px -18px 40px;
-    --darkreader-inline-color: #fffff7;
-    --darkreader-inline-bgcolor: #161614;
-  }
-  div:hover {
-    text-shadow: rgb(255, 255, 0) 0px -1px 4px, rgb(255, 64, 0) 0px -2px 10px,
-      red 0px -10px 20px, rgb(255, 128, 0) 0px -18px 40px;
-    --darkreader-inline-color: #fffff7;
-    --darkreader-inline-bgcolor: #161614;
-  }
 `;

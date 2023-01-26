@@ -1,15 +1,17 @@
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import GameList from "../components/GameList";
 
 export default function Person(props) {
-  const { name, twitter, hashtag } = props;
-  const navigate = useNavigate();
+  const { name, twitter, hashtag, gameList } = props;
   return (
     <Main>
-      <button onClick={() => navigate("/")}>Voltar</button>
-      <GameList personName={name} twitter={twitter} hashtag={hashtag}></GameList>
+      <GameList
+        personName={name}
+        twitter={twitter}
+        hashtag={hashtag}
+        gameList={gameList}
+      ></GameList>
     </Main>
   );
 }
@@ -18,6 +20,32 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  header {
+    background: #a49616;
+    background: -moz-linear-gradient(
+      left,
+      #a49616 0%,
+      #cbbb27 50%,
+      #747511 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #a49616 0%,
+      #cbbb27 50%,
+      #747511 100%
+    );
+    background: linear-gradient(
+      to right,
+      #a49616 0%,
+      #cbbb27 50%,
+      #747511 100%
+    );
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   button {
     margin: 10px;
@@ -39,7 +67,7 @@ const Main = styled.main`
       rgb(35, 136, 203) 50%,
       rgb(20, 78, 117) 100%
     );
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    box-shadow: rgb(0, 0, 0) 1px 1px 10px 1px;
     border: 2px solid rgb(28, 110, 164);
     display: inline-block;
   }
