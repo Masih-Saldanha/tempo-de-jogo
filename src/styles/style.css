@@ -3,17 +3,15 @@
 }
 
 html {
-  height: 100%;
+  /* background: url("https://media.discordapp.net/attachments/1060993133191639130/1068303545918554163/sony-playstation-stars-1200x675.png?width=840&height=472") no-repeat center center fixed;  */
+  /* -webkit-background-size: cover; */
+  /* -moz-background-size: cover; */
+  /* -o-background-size: cover; */
+  /* background-size: cover; */
+  background: linear-gradient(to right, #031475 0%, #009ccb 50%, #031e75 100%);
 }
 
 body {
-  background-image: url("https://media.discordapp.net/attachments/1060993133191639130/1068303545918554163/sony-playstation-stars-1200x675.png?width=840&height=472");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: black;
