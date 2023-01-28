@@ -16,6 +16,8 @@ export default function Game(props) {
   const minutes = now.diff(gameLaunch, "minute");
   const seconds = now.diff(gameLaunch, "second");
 
+  const twitterLink = `https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. ${hashtag} E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX e @kakabelinhoo através do https://segredo-sonysta.vercel.app/`;
+
   useEffect(() => {
     const timer = setInterval(() => {
       setUserTime(dayjs(Date()).format());
@@ -33,10 +35,7 @@ export default function Game(props) {
       <h2>{minutes} minutos</h2>
       <h2>{seconds} segundos</h2>
       <h3>Sem zerar {name}</h3>
-      <a
-        href={`https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. ${hashtag} E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX e @kakabelinhoo através do https://segredo-sonysta.vercel.app/`}
-        target="_blank"
-      >
+      <a href={twitterLink} target="_blank">
         Cobre o {personName}
       </a>
     </Square>
@@ -84,7 +83,8 @@ const Square = styled.div`
   h1 {
     padding-bottom: 10px;
     color: white;
-    text-shadow: 2px 2px 5px black, -2px 2px 5px black, 2px -2px 5px black, -2px -2px 5px black;
+    text-shadow: 2px 2px 5px black, -2px 2px 5px black, 2px -2px 5px black,
+      -2px -2px 5px black;
   }
   h2 {
     padding-top: 3px;

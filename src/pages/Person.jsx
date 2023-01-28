@@ -22,29 +22,49 @@ const Main = styled.main`
   align-items: center;
 
   header {
-    background: #a49616;
-    background: -moz-linear-gradient(
+    /* background: #a49616; */
+    /* background: -moz-linear-gradient(
       left,
       #a49616 0%,
       #cbbb27 50%,
       #747511 100%
-    );
-    background: -webkit-linear-gradient(
+    ); */
+    /* background: -webkit-linear-gradient(
       left,
       #a49616 0%,
       #cbbb27 50%,
       #747511 100%
-    );
-    background: linear-gradient(
+    ); */
+    /* background: linear-gradient(
       to right,
       #a49616 0%,
       #cbbb27 50%,
       #747511 100%
+    ); */
+    background: #197503;
+    background: -moz-linear-gradient(
+      left,
+      #197503 0%,
+      #43cb00 50%,
+      #197503 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #197503 0%,
+      #43cb00 50%,
+      #197503 100%
+    );
+    background: linear-gradient(
+      to right,
+      #197503 0%,
+      #43cb00 50%,
+      #197503 100%
     );
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: center;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
   }
 
   button {

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SiYoutubemusic } from "react-icons/si";
 import Sound from "react-sound-2";
+
 import bg from "./../assets/bg.mp3";
 
 export default function BG() {
@@ -14,7 +15,7 @@ export default function BG() {
   }
   return (
     <>
-      <SiYoutubemusic onClick={handlePlay} size={40} color={"a41c1c"} />
+      <SiYoutubemusic onClick={handlePlay} size={30} color={"a41c1c"} />
       <Sound
         url={bg}
         playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.PAUSE}

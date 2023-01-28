@@ -2,18 +2,18 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #197503;
-  background: -moz-linear-gradient(left, #197503 0%, #43cb00 50%, #197503 100%);
-  background: -webkit-linear-gradient(
-    left,
-    #197503 0%,
-    #43cb00 50%,
-    #197503 100%
-  );
-  background: linear-gradient(to right, #197503 0%, #43cb00 50%, #197503 100%);
-  /* background: #197503 url("https://adrenaline.com.br/uploads/chamadas/playstation-5-vertical-problema.jpg") no-repeat scroll 50% 50%; */
+html {
+  height: 100%;
+}
 
+body {
+  background-image: url("https://media.discordapp.net/attachments/1060993133191639130/1068303545918554163/sony-playstation-stars-1200x675.png?width=840&height=472");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: black;

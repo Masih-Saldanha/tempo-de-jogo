@@ -5,51 +5,53 @@ import styled from "styled-components";
 import drakeImg from "./../assets/drake_01.jpeg";
 import mahzinhoImg from "./../assets/mahzinho_bloqueado.jpeg";
 import obrigadoAudio from "./../assets/obrigado.mp3";
-import mahzinhoAudio from "./../assets/audio_mazinho.mp3";
+import mahzinhoAudio from "./../assets/audio_mahzinho_curto.mp3";
 
 export default function Main() {
   const navigate = useNavigate();
   const audioDrake = new Audio(obrigadoAudio);
   const audioMahzinho = new Audio(mahzinhoAudio);
   const [loading, setLoading] = useState(false);
+
+  function navigateToPersonPage(person, audio, time) {
+    if (person === "/mahzinho") {
+      if (loading) {
+        return;
+      } else {
+        setLoading(true);
+        audio.play();
+        setTimeout(() => {
+          setLoading(false);
+        }, time);
+      }
+    } else if (loading) {
+      return;
+    } else {
+      setLoading(true);
+      audio.play();
+      setTimeout(() => {
+        setLoading(false);
+        navigate(person);
+      }, time);
+    }
+  }
+
   return (
     <Page>
       <h2>Descubra aqui o que o seu Mestre quer esconder de você!</h2>
       <Menu>
         <ImageDrake img={drakeImg}>
-          <h1
-            onClick={() => {
-              if (loading) {
-                return;
-              } else {
-                setLoading(true);
-                audioDrake.play();
-                setTimeout(() => {
-                  setLoading(false);
-                  navigate("/drake");
-                }, 3000);
-              }
-            }}
-          >
+          <h1 onClick={() => navigateToPersonPage("/drake", audioDrake, 1000)}>
             CLIQUE AQUI!
           </h1>
         </ImageDrake>
         <ImageMahzinho img={mahzinhoImg}>
           <h1
-            onClick={() => {
-              if (loading) {
-                return;
-              } else {
-                setLoading(true);
-                audioMahzinho.play();
-                setTimeout(() => {
-                  setLoading(false);
-                  // navigate("/mahzinho");
-                }, 3000);
-              }
-            }}
+            onClick={() =>
+              navigateToPersonPage("/mahzinho", audioMahzinho, 3000)
+            }
           >
-            EM BREVE
+            META: R$ 50,00
           </h1>
         </ImageMahzinho>
       </Menu>

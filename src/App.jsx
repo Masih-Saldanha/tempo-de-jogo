@@ -7,7 +7,7 @@ import Person from "./pages/Person";
 import Error from "./pages/Error";
 import Main from "./pages/Main";
 import livePix from "./assets/livepix.png";
-import pidao from "./assets/pidao.mp3";
+import pidao from "./assets/1_real.mp3";
 import BG from "./components/BG";
 
 export default function App() {
@@ -213,11 +213,10 @@ export default function App() {
   const pidaoSound = new Audio(pidao);
   return (
     <BrowserRouter>
-      <BGButton>
-        <BG />
-      </BGButton>
-      <LivePix>
-        {!buttonPix ? (
+        <BGButton>
+          <BG />
+        </BGButton>
+        <LivePix>
           <button
             onClick={() => {
               pidaoSound.play();
@@ -226,53 +225,55 @@ export default function App() {
           >
             Contribua
           </button>
-        ) : (
-          <menu>
-            <h1>Ajude este site a se manter e zoar com mais sonystas</h1>
-            <img src={livePix} />
-            <div>
-              <a href={`https://livepix.gg/senpaidefamilia`} target="_blank">
-                Doe
-              </a>
-              <a
-                href={`https://livepix.gg/senpaidefamilia/assinatura`}
-                target="_blank"
-              >
-                Assine
-              </a>
-            </div>
-            <button onClick={() => setButtonPix(false)}>Voltar</button>
-          </menu>
-        )}
-      </LivePix>
-      <Routes>
-        <Route exact path="/*" element={<Error />}></Route>
-        <Route exact path="/" element={<Main />}></Route>
-        <Route
-          exact
-          path="/drake"
-          element={
-            <Person
-              name={"Drake"}
-              twitter={"@drakesincero5"}
-              hashtag={"%23LaveACaraDrake"}
-              gameList={listaDrake}
-            />
-          }
-        ></Route>
-        <Route
-          exact
-          path="/mahzinho"
-          element={
-            <Person
-              name={"Mahzinho"}
-              twitter={"@mahzinho"}
-              hashtag={"%23LaveACaraSemRegras"}
-              gameList={listaMahzinho}
-            />
-          }
-        ></Route>
-      </Routes>
+          {!buttonPix ? (
+            <></>
+          ) : (
+            <menu>
+              <h1>Ajude este site a se manter e zoar com mais sonystas</h1>
+              <img src={livePix} />
+              <div>
+                <a href={`https://livepix.gg/senpaidefamilia`} target="_blank">
+                  Doe
+                </a>
+                <a
+                  href={`https://livepix.gg/senpaidefamilia/assinatura`}
+                  target="_blank"
+                >
+                  Assine
+                </a>
+              </div>
+              <button onClick={() => setButtonPix(false)}>Voltar</button>
+            </menu>
+          )}
+        </LivePix>
+        <Routes>
+          <Route exact path="/*" element={<Error />}></Route>
+          <Route exact path="/" element={<Main />}></Route>
+          <Route
+            exact
+            path="/drake"
+            element={
+              <Person
+                name={"Drake"}
+                twitter={"@drakesincero5"}
+                hashtag={"%23LaveACaraDrake"}
+                gameList={listaDrake}
+              />
+            }
+          ></Route>
+          <Route
+            exact
+            path="/mahzinho"
+            element={
+              <Person
+                name={"Mahzinho"}
+                twitter={"@mahzinho"}
+                hashtag={"%23LaveACaraSemRegras"}
+                gameList={listaMahzinho}
+              />
+            }
+          ></Route>
+        </Routes>
     </BrowserRouter>
   );
 }
@@ -282,7 +283,11 @@ const BGButton = styled.div`
   right: 0;
   top: 0;
   margin: 10px;
+  padding: 2px 2px 0px 2px;
   z-index: 1;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: rgb(0, 0, 0) 1px 1px 10px 1px;
 `;
 
 const LivePix = styled.aside`
