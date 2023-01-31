@@ -107,6 +107,7 @@ const Square = styled.div`
   }
 
   background: url(${(props) => props.img}) no-repeat scroll 50% 50%;
+  /* background-size: cover; */
 
   -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
   box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);

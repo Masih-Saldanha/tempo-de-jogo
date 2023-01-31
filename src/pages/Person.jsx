@@ -1,25 +1,118 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import GameList from "../components/GameList";
 
 export default function Person(props) {
   const { name, twitter, hashtag, gameList } = props;
+  const [list, setList] = useState(gameList);
+  const navigate = useNavigate();
+  function orderByName(a, b) {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  }
+  function orderByDate(a, b) {
+    if (a.time < b.time) {
+      return -1;
+    }
+    if (a.time > b.time) {
+      return 1;
+    }
+    return 0;
+  }
   return (
     <Main>
+      <NewHeader>
+        <header>
+          <button onClick={() => navigate("/")}>Voltar</button>
+          <menu>
+            <button
+              onClick={() => {
+                setList([...gameList.sort(orderByName)]);
+              }}
+            >
+              Ordenar por nome ⬆️
+            </button>
+            <button
+              onClick={() => {
+                setList([...gameList.sort(orderByName)].reverse());
+              }}
+            >
+              Ordenar por nome ⬇️
+            </button>
+            <button
+              onClick={() => {
+                setList([...gameList.sort(orderByDate)]);
+              }}
+            >
+              Ordenar por data ⬆️
+            </button>
+            <button
+              onClick={() => {
+                setList([...gameList.sort(orderByDate)].reverse());
+              }}
+            >
+              Ordenar por data ⬇️
+            </button>
+          </menu>
+        </header>
+      </NewHeader>
       <GameList
         personName={name}
         twitter={twitter}
         hashtag={hashtag}
-        gameList={gameList}
+        gameList={list}
       ></GameList>
     </Main>
   );
 }
 
+const NewHeader = styled.div`
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    background: #a49616;
+    background: -moz-linear-gradient(
+      left,
+      #a49616 0%,
+      #cbbb27 50%,
+      #747511 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #a49616 0%,
+      #cbbb27 50%,
+      #747511 100%
+    );
+    background: linear-gradient(
+      to right,
+      #a49616 0%,
+      #cbbb27 50%,
+      #747511 100%
+    );
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 
   header {
     /* background: #a49616; */

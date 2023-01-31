@@ -6,9 +6,12 @@ import dayjs from "dayjs";
 import Person from "./pages/Person";
 import Error from "./pages/Error";
 import Main from "./pages/Main";
-import livePix from "./assets/livepix.png";
-import pidao from "./assets/1_real.mp3";
 import BG from "./components/BG";
+
+import livePix from "./assets/livepix.png";
+import forspokenImage from "./assets/forspokenEstourado.jpeg";
+
+import pidao from "./assets/1_real.mp3";
 
 export default function App() {
   const [buttonPix, setButtonPix] = useState(false);
@@ -202,6 +205,20 @@ export default function App() {
       time: dayjs("11/06/2018"),
     },
   ].sort(orderByName);
+  const listaPrata = [
+    {
+      name: "Forspoken",
+      image: forspokenImage,
+      time: dayjs("01/24/2023"),
+    },
+  ].sort(orderByName);
+  const listaPassaPano = [
+    {
+      name: "Forspoken",
+      image: forspokenImage,
+      time: dayjs("01/24/2023"),
+    },
+  ].sort(orderByName);
   const listaMahzinho = [
     {
       name: "Astro Playroom",
@@ -213,67 +230,91 @@ export default function App() {
   const pidaoSound = new Audio(pidao);
   return (
     <BrowserRouter>
-        <BGButton>
-          <BG />
-        </BGButton>
-        <LivePix>
-          <button
-            onClick={() => {
-              pidaoSound.play();
-              setButtonPix(true);
-            }}
-          >
-            Contribua
-          </button>
-          {!buttonPix ? (
-            <></>
-          ) : (
-            <menu>
-              <h1>Ajude este site a se manter e zoar com mais sonystas</h1>
-              <img src={livePix} />
-              <div>
-                <a href={`https://livepix.gg/senpaidefamilia`} target="_blank">
-                  Doe
-                </a>
-                <a
-                  href={`https://livepix.gg/senpaidefamilia/assinatura`}
-                  target="_blank"
-                >
-                  Assine
-                </a>
-              </div>
-              <button onClick={() => setButtonPix(false)}>Voltar</button>
-            </menu>
-          )}
-        </LivePix>
-        <Routes>
-          <Route exact path="/*" element={<Error />}></Route>
-          <Route exact path="/" element={<Main />}></Route>
-          <Route
-            exact
-            path="/drake"
-            element={
-              <Person
-                name={"Drake"}
-                twitter={"@drakesincero5"}
-                hashtag={"%23LaveACaraDrake"}
-                gameList={listaDrake}
-              />
-            }
-          ></Route>
-          <Route
-            exact
-            path="/mahzinho"
-            element={
-              <Person
-                name={"Mahzinho"}
-                twitter={"@mahzinho"}
-                hashtag={"%23LaveACaraSemRegras"}
-                gameList={listaMahzinho}
-              />
-            }
-          ></Route>
-        </Routes>
+      <BGButton>
+        <BG />
+      </BGButton>
+      <LivePix>
+        <button
+          onClick={() => {
+            pidaoSound.play();
+            setButtonPix(true);
+          }}
+        >
+          Contribua
+        </button>
+        {!buttonPix ? (
+          <></>
+        ) : (
+          <menu>
+            <h1>Ajude este site a se manter e zoar com mais sonystas</h1>
+            <img src={livePix} />
+            <div>
+              <a href={`https://livepix.gg/senpaidefamilia`} target="_blank">
+                Doe
+              </a>
+              <a
+                href={`https://livepix.gg/senpaidefamilia/assinatura`}
+                target="_blank"
+              >
+                Assine
+              </a>
+            </div>
+            <button onClick={() => setButtonPix(false)}>Voltar</button>
+          </menu>
+        )}
+      </LivePix>
+      <Routes>
+        <Route exact path="/*" element={<Error />}></Route>
+        <Route exact path="/" element={<Main />}></Route>
+        <Route
+          exact
+          path="/drake"
+          element={
+            <Person
+              name={"Drake"}
+              twitter={"@drakesincero5"}
+              hashtag={"%23LaveACaraDrake"}
+              gameList={listaDrake}
+            />
+          }
+        ></Route>
+        <Route
+          exact
+          path="/prata"
+          element={
+            <Person
+              name={"Prata"}
+              twitter={"@jogadormito1"}
+              hashtag={"%23LaveACaraPrata"}
+              gameList={listaPrata}
+            />
+          }
+        ></Route>
+        <Route
+          exact
+          path="/passapano"
+          element={
+            <Person
+              name={"Passa Pano"}
+              twitter={"@Lord_PSMG"}
+              hashtag={"%23LaveACaraPassaPano"}
+              gameList={listaPassaPano}
+            />
+          }
+        ></Route>
+        <Route
+          exact
+          path="/mahzinho"
+          element={
+            <Person
+              name={"Mahzinho"}
+              twitter={"@mahzinho"}
+              hashtag={"%23LaveACaraSemRegras"}
+              gameList={listaMahzinho}
+            />
+          }
+        ></Route>
+      </Routes>
     </BrowserRouter>
   );
 }

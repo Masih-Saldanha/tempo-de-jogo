@@ -4,12 +4,19 @@ import styled from "styled-components";
 
 import drakeImg from "./../assets/drake_01.jpeg";
 import mahzinhoImg from "./../assets/mahzinho_bloqueado.jpeg";
+import prataImg from "./../assets/prata.jpg";
+import passaPanoImg from "./../assets/passapano.png";
+
 import obrigadoAudio from "./../assets/obrigado.mp3";
+import prataAudio from "./../assets/prataAudio.mp3"
+import passaPanoAudio from "./../assets/passaPanoAudio.mp3"
 import mahzinhoAudio from "./../assets/audio_mahzinho_curto.mp3";
 
 export default function Main() {
   const navigate = useNavigate();
   const audioDrake = new Audio(obrigadoAudio);
+  const audioPrata = new Audio(prataAudio);
+  const audioPassaPano = new Audio(passaPanoAudio);
   const audioMahzinho = new Audio(mahzinhoAudio);
   const [loading, setLoading] = useState(false);
 
@@ -45,13 +52,23 @@ export default function Main() {
             CLIQUE AQUI!
           </h1>
         </ImageDrake>
+        <ImagePrata img={prataImg}>
+          <h1 onClick={() => navigateToPersonPage("/prata", audioPrata, 1000)}>
+            CLIQUE AQUI!
+          </h1>
+        </ImagePrata>
+        <ImagePassaPano img={passaPanoImg}>
+          <h1 onClick={() => navigateToPersonPage("/passapano", audioPassaPano, 2000)}>
+            CLIQUE AQUI!
+          </h1>
+        </ImagePassaPano>
         <ImageMahzinho img={mahzinhoImg}>
           <h1
             onClick={() =>
               navigateToPersonPage("/mahzinho", audioMahzinho, 3000)
             }
           >
-            META: R$ 50,00
+            EM BREVE
           </h1>
         </ImageMahzinho>
       </Menu>
@@ -121,6 +138,16 @@ const Menu = styled.menu`
 
 const ImageDrake = styled.div`
   background: url(${(props) => props.img}) no-repeat 50% 10%;
+`;
+
+const ImagePrata = styled.div`
+  background: url(${(props) => props.img}) no-repeat 70% 0%;
+  background-size: cover;
+`;
+
+const ImagePassaPano = styled.div`
+  background: url(${(props) => props.img}) no-repeat 0% 45%;
+  background-size: cover;
 `;
 
 const ImageMahzinho = styled.div`
