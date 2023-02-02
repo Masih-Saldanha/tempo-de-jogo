@@ -8,8 +8,9 @@ import prataImg from "./../assets/prata.jpg";
 import passaPanoImg from "./../assets/passapano.png";
 
 import obrigadoAudio from "./../assets/obrigado.mp3";
-import prataAudio from "./../assets/prataAudio.mp3"
-import passaPanoAudio from "./../assets/passaPanoAudio.mp3"
+import prataAudio from "./../assets/prataAudio.mp3";
+import passaPanoAudio from "./../assets/passaPanoAudio.mp3";
+import robertinhoAudio from "./../assets/robertinhoAudio.mp3";
 import mahzinhoAudio from "./../assets/audio_mahzinho_curto.mp3";
 
 export default function Main() {
@@ -17,6 +18,7 @@ export default function Main() {
   const audioDrake = new Audio(obrigadoAudio);
   const audioPrata = new Audio(prataAudio);
   const audioPassaPano = new Audio(passaPanoAudio);
+  const audioRobertinho = new Audio(robertinhoAudio);
   const audioMahzinho = new Audio(mahzinhoAudio);
   const [loading, setLoading] = useState(false);
 
@@ -62,6 +64,11 @@ export default function Main() {
             CLIQUE AQUI!
           </h1>
         </ImagePassaPano>
+        <ImageRobertinho img={"https://i.ytimg.com/vi/BXRX9b_D6Q4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBkSt0-wBrctVUhnRJ1VnvNt0INYQ"}>
+          <h1 onClick={() => navigateToPersonPage("/robertinho", audioRobertinho, 3000)}>
+            CLIQUE AQUI!
+          </h1>
+        </ImageRobertinho>
         <ImageMahzinho img={mahzinhoImg}>
           <h1
             onClick={() =>
@@ -147,6 +154,11 @@ const ImagePrata = styled.div`
 
 const ImagePassaPano = styled.div`
   background: url(${(props) => props.img}) no-repeat 0% 45%;
+  background-size: cover;
+`;
+
+const ImageRobertinho = styled.div`
+  background: url(${(props) => props.img}) no-repeat 100% 0%;
   background-size: cover;
 `;
 

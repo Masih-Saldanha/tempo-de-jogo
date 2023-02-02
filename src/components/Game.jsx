@@ -15,8 +15,14 @@ export default function Game(props) {
   const hours = now.diff(gameLaunch, "hour");
   const minutes = now.diff(gameLaunch, "minute");
   const seconds = now.diff(gameLaunch, "second");
+  let yearString;
+  let monthString;
+  let dayString;
+  years !== 1 ? (yearString = "anos") : (yearString = "ano");
+  months !== 1 ? (monthString = "meses") : (monthString = "mês");
+  days !== 1 ? (dayString = "dias") : (dayString = "dia");
 
-  const twitterLink = `https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ano(s), ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. ${hashtag} E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX e @kakabelinhoo através do https://segredo-sonysta.vercel.app/`;
+  const twitterLink = `https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ${yearString}, ${months} ${monthString}, ${days} ${dayString}, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. ${hashtag} E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX e @kakabelinhoo através do https://segredo-sonysta.vercel.app/`;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,8 +35,8 @@ export default function Game(props) {
     <Square img={image}>
       <h1>{personName} já está a:</h1>
       {years !== 1 ? <h2>{years} anos</h2> : <h2>{years} ano</h2>}
-      <h2>{months} meses</h2>
-      <h2>{days} dias</h2>
+      {months !== 1 ? <h2>{months} meses</h2> : <h2>{months} mês</h2>}
+      {days !== 1 ? <h2>{days} dias</h2> : <h2>{days} dia</h2>}
       <h2>{hours} horas</h2>
       <h2>{minutes} minutos</h2>
       <h2>{seconds} segundos</h2>
@@ -107,7 +113,7 @@ const Square = styled.div`
   }
 
   background: url(${(props) => props.img}) no-repeat scroll 50% 50%;
-  /* background-size: cover; */
+  background-size: cover;
 
   -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);
   box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.7);

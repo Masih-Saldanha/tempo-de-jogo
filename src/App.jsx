@@ -67,7 +67,7 @@ export default function App() {
     {
       name: "Gran Turismo Sport",
       image:
-        "https://image.api.playstation.com/cdn/UP9000/CUSA03220_00/ULcLzYTrbuBPHcuOdbE6eWOIvvttdKV4.png",
+        "https://image.api.playstation.com/vulcan/img/rnd/202011/1019/E2IzmkaxyV5MFb5xqsTJeXdp.png",
       time: dayjs("10/17/2017"),
     },
     {
@@ -114,7 +114,7 @@ export default function App() {
     {
       name: "Little Big Planet 3",
       image:
-        "https://cdn.sistemawbuy.com.br/arquivos/ded4bf383ac7594db68adad1798e2141/produtos/YOU7HAE9/little-big-planet-3-ps3-61e0572e40526_mini.jpg",
+        "https://image.api.playstation.com/vulcan/img/rnd/202010/2122/vQqEXW0BefsUqAyJTelwjmuA.png",
       time: dayjs("11/18/2014"),
     },
     {
@@ -131,18 +131,18 @@ export default function App() {
     },
     {
       name: "Killzone 3",
-      image: "https://upload.wikimedia.org/wikipedia/en/9/91/Killzone_3.jpg",
+      image: "http://www.arkade.com.br/wp-content/uploads/2011/03/games-killzone-3.jpg",
       time: dayjs("02/22/2011"),
     },
     {
       name: "Heavy Rain",
       image:
-        "https://cdn.awsli.com.br/1000x1000/1345/1345600/produto/69131738/5e29fbd089.jpg",
+        "https://image.api.playstation.com/vulcan/img/rnd/202011/0518/bzbFEyekkbOzChcaWQXk2koL.png",
       time: dayjs("02/23/2010"),
     },
     {
       name: "Haze",
-      image: "https://m.media-amazon.com/images/I/518wrFCoBOL._AC_SX342_.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmIS7KQjW9DmdE289EXelA5MoDcgULWHc7tSrS0LeuAqfqHTx2sRFdvDjOZn1SK8OdmkU&usqp=CAU",
       time: dayjs("05/20/2008"),
     },
     {
@@ -154,18 +154,18 @@ export default function App() {
     {
       name: "White Knight Chronicles 1",
       image:
-        "https://upload.wikimedia.org/wikipedia/en/1/19/White_Knight_Chronicles.jpg",
+        "https://assets-prd.ignimgs.com/2022/03/02/whiteknightchronicles-1646242188946.jpg",
       time: dayjs("12/25/2008"),
     },
     {
       name: "White Knight Chronicles 2",
       image:
-        "https://upload.wikimedia.org/wikipedia/en/c/cc/White_Knight_Chronicles_2.png",
+        "https://assets-prd.ignimgs.com/2022/03/02/whiteknight2-1646239800791.jpg?width=300&crop=1%3A1%2Csmart",
       time: dayjs("07/08/2010"),
     },
     {
       name: "Socom 4 US Navy Seals",
-      image: "https://upload.wikimedia.org/wikipedia/en/a/a8/SOCOM_4.png",
+      image: "https://assets-prd.ignimgs.com/2022/03/01/socom4-sq-1646173401563.jpg",
       time: dayjs("04/19/2011"),
     },
     {
@@ -177,7 +177,7 @@ export default function App() {
     {
       name: "Folklore",
       image:
-        "https://upload.wikimedia.org/wikipedia/en/d/de/Folklore_%28videogame%29_boxart.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7-_b4H78Wx7264W8U-uP6D0_cwTicAUu_Vv_gfOxk90Zh-3VM29GlX7d13vqoM0ckvhM&usqp=CAU",
       time: dayjs("06/21/2007"),
     },
     {
@@ -189,7 +189,7 @@ export default function App() {
     {
       name: "Knack 1",
       image:
-        "https://upload.wikimedia.org/wikipedia/pt/d/dc/Knack_capa_oficial_ps4.jpg",
+        "https://assets-prd.ignimgs.com/2022/01/15/knack-sq-1642207975394.jpg",
       time: dayjs("11/15/2013"),
     },
     {
@@ -225,6 +225,28 @@ export default function App() {
       image:
         "https://image.api.playstation.com/vulcan/ap/rnd/202010/2012/T3h5aafdjR8k7GJAG82832De.png",
       time: dayjs("11/12/2020"),
+    },
+  ].sort(orderByName);
+  const listaRobertinho = [
+    {
+      name: "Hi-Fi Rush",
+      image: "https://cdn1.epicgames.com/offer/577c5cbc303a4d168b1a104f3b46e751/EGS_HiFiRUSH_TangoGameworks_S2_1200x1600-3d260fc3a00c507e281502993c0ab6ff",
+      time: dayjs("01/25/2023"),
+    },
+    {
+      name: "High on Life",
+      image: "https://media.zenfs.com/es/levelup_525/5a5763320356890837ab470dcce7b5cb",
+      time: dayjs("12/13/2022"),
+    },
+    {
+      name: "Dead Space Remake",
+      image: "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2023/01/12/deadspace-remake-023-qy1ojtqewjmr.jpg",
+      time: dayjs("01/27/2023"),
+    },
+    {
+      name: "Shadow of the Tomb Raider",
+      image: "https://upload.wikimedia.org/wikipedia/pt/f/f7/Shadow_of_the_Tomb_Raider_capa.png",
+      time: dayjs("09/12/2018"),
     },
   ].sort(orderByName);
   const pidaoSound = new Audio(pidao);
@@ -299,6 +321,18 @@ export default function App() {
               twitter={"@Lord_PSMG"}
               hashtag={"%23LaveACaraPassaPano"}
               gameList={listaPassaPano}
+            />
+          }
+        ></Route>
+        <Route
+          exact
+          path="/robertinho"
+          element={
+            <Person
+              name={"Robertinho"}
+              twitter={"@ROBERTOiNGaMe1"}
+              hashtag={"%23LaveACaraRobertinho"}
+              gameList={listaRobertinho}
             />
           }
         ></Route>
