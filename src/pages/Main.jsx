@@ -3,23 +3,23 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import drakeImg from "./../assets/drake_01.jpeg";
-import mahzinhoImg from "./../assets/mahzinho_bloqueado.jpeg";
+// import mahzinhoImg from "./../assets/mahzinho_bloqueado.jpeg";
 import prataImg from "./../assets/prata.jpg";
-import passaPanoImg from "./../assets/passapano.png";
+// import passaPanoImg from "./../assets/passapano.png";
 
 import obrigadoAudio from "./../assets/obrigado.mp3";
 import prataAudio from "./../assets/prataAudio.mp3";
-import passaPanoAudio from "./../assets/passaPanoAudio.mp3";
+// import passaPanoAudio from "./../assets/passaPanoAudio.mp3";
 import robertinhoAudio from "./../assets/robertinhoAudio.mp3";
-import mahzinhoAudio from "./../assets/audio_mahzinho_curto.mp3";
+// import mahzinhoAudio from "./../assets/audio_mahzinho_curto.mp3";
 
 export default function Main() {
   const navigate = useNavigate();
   const audioDrake = new Audio(obrigadoAudio);
   const audioPrata = new Audio(prataAudio);
-  const audioPassaPano = new Audio(passaPanoAudio);
+  // const audioPassaPano = new Audio(passaPanoAudio);
   const audioRobertinho = new Audio(robertinhoAudio);
-  const audioMahzinho = new Audio(mahzinhoAudio);
+  // const audioMahzinho = new Audio(mahzinhoAudio);
   const [loading, setLoading] = useState(false);
 
   function navigateToPersonPage(person, audio, time) {
@@ -59,17 +59,17 @@ export default function Main() {
             CLIQUE AQUI!
           </h1>
         </ImagePrata>
-        <ImagePassaPano img={passaPanoImg}>
+        {/* <ImagePassaPano img={passaPanoImg}>
           <h1 onClick={() => navigateToPersonPage("/passapano", audioPassaPano, 2000)}>
             CLIQUE AQUI!
           </h1>
-        </ImagePassaPano>
+        </ImagePassaPano> */}
         <ImageRobertinho img={"https://i.ytimg.com/vi/BXRX9b_D6Q4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBkSt0-wBrctVUhnRJ1VnvNt0INYQ"}>
           <h1 onClick={() => navigateToPersonPage("/robertinho", audioRobertinho, 3000)}>
             CLIQUE AQUI!
           </h1>
         </ImageRobertinho>
-        <ImageMahzinho img={mahzinhoImg}>
+        {/* <ImageMahzinho img={mahzinhoImg}>
           <h1
             onClick={() =>
               navigateToPersonPage("/mahzinho", audioMahzinho, 3000)
@@ -77,7 +77,7 @@ export default function Main() {
           >
             EM BREVE
           </h1>
-        </ImageMahzinho>
+        </ImageMahzinho> */}
       </Menu>
     </Page>
   );

@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 import styled from "styled-components";
 import dayjs from "dayjs";
 
@@ -8,13 +8,13 @@ import Error from "./pages/Error";
 import Main from "./pages/Main";
 import BG from "./components/BG";
 
-import livePix from "./assets/livepix.png";
+// import livePix from "./assets/livepix.png";
 import forspokenImage from "./assets/forspokenEstourado.jpeg";
 
-import pidao from "./assets/1_real.mp3";
+// import pidao from "./assets/1_real.mp3";
 
 export default function App() {
-  const [buttonPix, setButtonPix] = useState(false);
+  // const [buttonPix, setButtonPix] = useState(false);
   function orderByName(a, b) {
     if (a.name < b.name) {
       return -1;
@@ -212,21 +212,21 @@ export default function App() {
       time: dayjs("01/24/2023"),
     },
   ].sort(orderByName);
-  const listaPassaPano = [
-    {
-      name: "Forspoken",
-      image: forspokenImage,
-      time: dayjs("01/24/2023"),
-    },
-  ].sort(orderByName);
-  const listaMahzinho = [
-    {
-      name: "Astro Playroom",
-      image:
-        "https://image.api.playstation.com/vulcan/ap/rnd/202010/2012/T3h5aafdjR8k7GJAG82832De.png",
-      time: dayjs("11/12/2020"),
-    },
-  ].sort(orderByName);
+  // const listaPassaPano = [
+  //   {
+  //     name: "Forspoken",
+  //     image: forspokenImage,
+  //     time: dayjs("01/24/2023"),
+  //   },
+  // ].sort(orderByName);
+  // const listaMahzinho = [
+  //   {
+  //     name: "Astro Playroom",
+  //     image:
+  //       "https://image.api.playstation.com/vulcan/ap/rnd/202010/2012/T3h5aafdjR8k7GJAG82832De.png",
+  //     time: dayjs("11/12/2020"),
+  //   },
+  // ].sort(orderByName);
   const listaRobertinho = [
     {
       name: "Hi-Fi Rush",
@@ -249,12 +249,13 @@ export default function App() {
       time: dayjs("09/12/2018"),
     },
   ].sort(orderByName);
-  const pidaoSound = new Audio(pidao);
+  // const pidaoSound = new Audio(pidao);
   return (
     <BrowserRouter>
       <BGButton>
         <BG />
       </BGButton>
+      {/* 
       <LivePix>
         <button
           onClick={() => {
@@ -285,6 +286,8 @@ export default function App() {
           </menu>
         )}
       </LivePix>
+      */}
+      
       <Routes>
         <Route exact path="/*" element={<Error />}></Route>
         <Route exact path="/" element={<Main />}></Route>
@@ -312,6 +315,7 @@ export default function App() {
             />
           }
         ></Route>
+        {/* 
         <Route
           exact
           path="/passapano"
@@ -324,6 +328,7 @@ export default function App() {
             />
           }
         ></Route>
+      */}
         <Route
           exact
           path="/robertinho"
@@ -336,6 +341,7 @@ export default function App() {
             />
           }
         ></Route>
+        {/* 
         <Route
           exact
           path="/mahzinho"
@@ -348,6 +354,7 @@ export default function App() {
             />
           }
         ></Route>
+      */}
       </Routes>
     </BrowserRouter>
   );
