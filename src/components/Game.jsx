@@ -5,16 +5,24 @@ import styled from "styled-components";
 export default function Game(props) {
   const { name, image, time, personName, twitter, hashtag } = props;
 
-  const [userTime, setUserTime] = useState(dayjs(Date()));
+  const [userTime, setUserTime] = useState(dayjs());
 
-  const now = dayjs(Date());
+  const now = dayjs(userTime);
   const gameLaunch = time;
+  
+  // Calcular de forma hierárquica para evitar duplicação
   const years = now.diff(gameLaunch, "year");
-  const months = now.diff(gameLaunch, "month");
-  const days = now.diff(gameLaunch, "day");
-  const hours = now.diff(gameLaunch, "hour");
-  const minutes = now.diff(gameLaunch, "minute");
-  const seconds = now.diff(gameLaunch, "second");
+  const dateAfterYears = gameLaunch.add(years, "year");
+  const months = now.diff(dateAfterYears, "month");
+  const dateAfterMonths = dateAfterYears.add(months, "month");
+  const days = now.diff(dateAfterMonths, "day");
+  const dateAfterDays = dateAfterMonths.add(days, "day");
+  const hours = now.diff(dateAfterDays, "hour");
+  const dateAfterHours = dateAfterDays.add(hours, "hour");
+  const minutes = now.diff(dateAfterHours, "minute");
+  const dateAfterMinutes = dateAfterHours.add(minutes, "minute");
+  const seconds = now.diff(dateAfterMinutes, "second");
+  
   let yearString;
   let monthString;
   let dayString;
@@ -26,10 +34,10 @@ export default function Game(props) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setUserTime(dayjs(Date()).format());
+      setUserTime(dayjs());
     }, 1000);
     return () => clearInterval(timer);
-  }, [userTime]);
+  }, []);
 
   return (
     <Square img={image}>
