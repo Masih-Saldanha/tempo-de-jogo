@@ -23,17 +23,18 @@ export default function Main() {
   const [loading, setLoading] = useState(false);
 
   function navigateToPersonPage(person, audio, time) {
-    if (person === "/mahzinho") {
-      if (loading) {
-        return;
-      } else {
-        setLoading(true);
-        audio.play();
-        setTimeout(() => {
-          setLoading(false);
-        }, time);
-      }
-    } else if (loading) {
+    // if (person === "/mahzinho") {
+    //   if (loading) {
+    //     return;
+    //   } else {
+    //     setLoading(true);
+    //     audio.play();
+    //     setTimeout(() => {
+    //       setLoading(false);
+    //     }, time);
+    //   }
+    // } else 
+    if (loading) {
       return;
     } else {
       setLoading(true);
@@ -152,16 +153,16 @@ const ImagePrata = styled.div`
   background-size: cover;
 `;
 
-const ImagePassaPano = styled.div`
-  background: url(${(props) => props.img}) no-repeat 0% 45%;
-  background-size: cover;
-`;
+// const ImagePassaPano = styled.div`
+//   background: url(${(props) => props.img}) no-repeat 0% 45%;
+//   background-size: cover;
+// `;
 
 const ImageRobertinho = styled.div`
   background: url(${(props) => props.img}) no-repeat 100% 0%;
   background-size: cover;
 `;
 
-const ImageMahzinho = styled.div`
-  background: url(${(props) => props.img}) no-repeat 20% 0%;
-`;
+// const ImageMahzinho = styled.div`
+//   background: url(${(props) => props.img}) no-repeat 20% 0%;
+// `;

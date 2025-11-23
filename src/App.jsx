@@ -269,7 +269,7 @@ export default function App() {
           <></>
         ) : (
           <menu>
-            <h1>Ajude este site a se manter e zoar com mais sonystas</h1>
+            <h1>Ajude este site a se manter e zoar</h1>
             <img src={livePix} />
             <div>
               <a href={`https://livepix.gg/senpaidefamilia`} target="_blank">
@@ -297,7 +297,7 @@ export default function App() {
           element={
             <Person
               name={"Drake"}
-              twitter={"@drakesincero5"}
+              twitter={"@Drakesincero5"}
               hashtag={"%23LaveACaraDrake"}
               gameList={listaDrake}
             />
@@ -335,7 +335,7 @@ export default function App() {
           element={
             <Person
               name={"Robertinho"}
-              twitter={"@ROBERTOiNGaMe1"}
+              twitter={"@robertinthegame"}
               hashtag={"%23LaveACaraRobertinho"}
               gameList={listaRobertinho}
             />

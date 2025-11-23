@@ -30,7 +30,7 @@ export default function Game(props) {
   months !== 1 ? (monthString = "meses") : (monthString = "mês");
   days !== 1 ? (dayString = "dias") : (dayString = "dia");
 
-  const twitterLink = `https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ${yearString}, ${months} ${monthString}, ${days} ${dayString}, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. ${hashtag} E VÁ ZERAR! Um oferecimento de @PALADINODOXBOX e @kakabelinhoo através do https://segredo-sonysta.vercel.app/`;
+  const twitterLink = `https://twitter.com/intent/tweet?text=${twitter} vc está a: ${years} ${yearString}, ${months} ${monthString}, ${days} ${dayString}, ${hours} horas, ${minutes} minutos e ${seconds} segundos sem ZERAR ${name}. ${hashtag} E VÁ ZERAR! Um oferecimento de https://segredo-gamer.vercel.app/`;
 
   useEffect(() => {
     const timer = setInterval(() => {
